@@ -1,0 +1,33 @@
+{
+  "name": "nexus-print-bridge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev":   "nodemon src/index.js",
+    "build": "pkg src/bootstrap.js --target node18-win-x64 --output dist/nexus-print-bridge.exe"
+  },
+  "pkg": {
+    "assets": [
+      "node_modules/node-thermal-printer/**/*",
+      "package.json"
+    ],
+    "targets": ["node20-win-x64"]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "node-thermal-printer": "^4.6.0",
+    "uuid": "^14.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14",
+    "pkg": "^5.8.1"
+  }
+}
